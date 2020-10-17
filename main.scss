@@ -1,7 +1,12 @@
 // Colors
+// hsl:(hue, saturation, lightness)
+
 $backgroundcolor:hsl(210, 36%, 96%);
 $bodycolor:hsl(209, 61%, 16%);
+
+// box-shadow:<offsetx> <offsety> <blurradius>
 $boxshadow:0 1px 3px rgba(0, 0, 0, 0.2);
+
 $black:#222;
 $white:#fff;
 $navh3color:hsl(205, 78%, 60%);
@@ -40,6 +45,8 @@ h2,h3{
     text-transform: capitalize;
     letter-spacing: 0.1rem;
     margin-bottom: 0.75rem;
+    
+    //On Y-axis     
     line-height: 1.2;
 }
 
@@ -54,14 +61,22 @@ h3{
 nav{
     background-color: $white;
     box-shadow: $boxshadow;
+    
+    //On Y-axis
     height: 4rem;
 
     .nav-center{
         width: 90vw;
         max-width: 620px;
         margin: 0 auto;
+        
+        //Convert column into row
         display: flex;
+        
+        //On Y-axis         
         align-items: center;
+        
+        //On X-axis         
         justify-content: space-between;
 
         h3{
@@ -70,7 +85,7 @@ nav{
         }
 
         .nav-links {
-
+            //Convert column into row             
             display: flex;
 
             li a{
@@ -89,7 +104,11 @@ nav{
 
 main{
     min-height: 100vh;
+    
+    //Convert row into column
     display: grid;
+    
+    //The CSS place-items shorthand property allows you to align items along both the block and inline directions at once (i.e. the align-items and justify-items properties) in a relevant layout system such as Grid or Flexbox.     
     place-items: center;
 
     .container{
@@ -108,14 +127,29 @@ main{
         }
         .btn-element{
             text-transform: uppercase;
+            
+            //Transparent color in CSS makes background elements visible from another top element of the page.
             background: transparent;
+            
+            //padding:top & bottom left & right             
             padding: 1rem 2rem;
+            
             letter-spacing: 0.1rem;
+            
+            //  For inline-block we can add top bottom padding and margin can be added.And also inline-block stays on its own line           
             display: inline-block;
+            
             font-size: 1rem;
+            
+            //transition:default value timing-duration 
+            //transition-timing-function:linear specifies a transition effect with the same speed from start to end.
+            
             transition: all 0.2s linear;
             cursor: pointer;
+            
+            //border:size style color             
             border: 2px solid $black;
+            
             border-radius: 20px;
         }
         .btn-element:hover{
